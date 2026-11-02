@@ -1,0 +1,14 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+data/chroma/
+data/figures/
+data/*.sqlite
+data/*.sqlite3
+data/trust_model.joblib
+data/trust_report.json
+data/annotations/*
+!data/annotations/.gitkeep

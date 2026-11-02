@@ -1,0 +1,32 @@
+Дата запуску: 2026.10.13 10:09
+Python: Python 3.10.12
+
+===== python -m unittest tests.test_core -v =====
+test_roundtrip_and_skip (tests.test_core.DatabaseTests) ... ok
+test_covers_annotation_sample (tests.test_core.GoldenSetTests) ... ok
+test_json_fence (tests.test_core.ParseTests) ... ok
+test_json_with_preamble (tests.test_core.ParseTests) ... ok
+test_modes_dispatch (tests.test_core.PipelineTests) ... ok
+test_unknown_mode (tests.test_core.PipelineTests) ... ok
+test_context_is_numbered (tests.test_core.PromptTests) ... ok
+test_no_context_is_bare_question (tests.test_core.PromptTests) ... ok
+test_prompt_files_have_placeholders (tests.test_core.PromptTests) ... ok
+test_dedup (tests.test_core.RetrieverTests) ... ok
+test_rerank_keeps_closer_chunk (tests.test_core.RetrieverTests) ... ok
+test_good_answer_beats_hallucination_and_offtopic (tests.test_core.RougeTests) ... ok
+test_tokenizer_keeps_ukrainian (tests.test_core.RougeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.135s
+
+OK
+
+===== python -m evaluators.sanity --method rouge =====
+
+== rouge ==
+  good: {'rouge1': 1.0, 'rouge2': 1.0, 'rougeL': 1.0}
+  hallucinated: {'rouge1': 0.6666666666666665, 'rouge2': 0.28571428571428575, 'rougeL': 0.6666666666666665}
+  offtopic: {'rouge1': 0.0, 'rouge2': 0.0, 'rougeL': 0.0}
+  partial: {'rouge1': 0.3333333333333333, 'rouge2': 0.0, 'rougeL': 0.3333333333333333}
+  refusal_wrong: {'rouge1': 0.0, 'rouge2': 0.0, 'rougeL': 0}
+  OK: rougeL розрізняє добру відповідь, вигадку й відповідь не по питанню
